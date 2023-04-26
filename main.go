@@ -1,1 +1,0 @@
-package Pikhsel_golang

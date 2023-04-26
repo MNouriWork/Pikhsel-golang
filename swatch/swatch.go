@@ -37,3 +37,16 @@ func NewSwatch(state *apptype.State, color color.Color, swatchIndex int, clickHa
 	return swatch
 
 }
+
+func (swath *Swatch) CreateRenderer() {
+
+	square := canvas.NewRectangle(swath.Color)
+	objects := []fyne.CanvasObject{square}
+
+	return &SwatchRenderer{
+		square: *square,
+		objects: objects,
+		parent:  swath,
+	}
+
+}
